@@ -1,0 +1,4 @@
+.col {
+    width: calc(100% / 3);
+    height: 20rem;
+}
