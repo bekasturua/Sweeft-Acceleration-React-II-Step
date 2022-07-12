@@ -1,8 +1,8 @@
 import "./App.css";
-import Card from "./components/Card/Card";
+import Users from "./components/Card/Users";
 
 function App() {
-  return <Card></Card>;
+  return <Users></Users>;
 }
 
 export default App;
