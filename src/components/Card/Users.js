@@ -10,34 +10,45 @@ const Users = (props) => {
   useEffect(() => {
     axios
       .get(
-        `http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${page}/12`
+        `http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${page}/20`
       )
       .then((res) => {
-        setUsers(res.data.list);
+        setUsers([...users, ...res.data.list]);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [page]);
+
+  const handleScroll = (e) => {
+    const bottom =
+      e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    if (bottom) {
+      setPage(page + 1);
+    }
+  };
+
   return (
-    <div>
-      <div className="row row-cols-1 row-cols-md-3 g-4">
+    <div
+      style={{
+        height: "700px",
+        overflow: "scroll",
+        overflowX: "hidden",
+      }}
+      onScroll={handleScroll}
+    >
+      <div className="row row-cols-1 row-cols-md-4 g-4">
         {users.map((user) => {
           return (
-              <div className={classes.col}>
-                <div className="card h-100">
-                  <img src="..." className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      This is a longer card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <button>Add to cart</button>
-                  </div>
+            <div className={classes.col} key={user.id}>
+              <div className={classes.card}>
+                <img src={user.imageUrl + `?v=${user.id}`} className={classes.img} alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{`${user.prefix} ${user.name} ${user.lastName}`}</h5>
+                  <p className="card-text">{user.title}</p>
                 </div>
               </div>
+            </div>
           );
         })}
       </div>
