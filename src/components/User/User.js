@@ -1,65 +1,63 @@
-import classes from "./User.module.css";
 import img from "../User/img.jpg";
+import "./User.css";
 
 const User = (props) => {
   return (
-    <div className={classes.d}>
-      <div className={classes.header}>
-        <img src={img} alt="profile" />
-        <fieldset className={classes.info}>
-          <legend>Info</legend>
-          <div>
-            <strong>Hi</strong>
+    <div className="profile">
+      <div className="header">
+        <img src={img} alt="" />
+        <div className="left-info">
+          <span>Info</span>
+          <div className="left-info-top">
+            <strong>hi</strong>
+            <i>hi</i>
           </div>
-          <div>
-            <i>Bye</i>
+          <div className="left-top-bottom">
+            <p>
+              <u>Email</u>hi
+            </p>
+            <p>
+              <u>Ip Address</u>:hi
+            </p>
+            <p>
+              <u>Ip Address</u>:hi
+            </p>
+            <p>
+              <u>Job Area</u>: hi
+            </p>
+            <p>
+              <u>Job Type</u>: hi
+            </p>
           </div>
-          <br />
-          <div>
-            <span>email: </span>
-            beqasturua3@gmail.com
+        </div>
+        <div className="right-info">
+          <span>Adress</span>
+          <div className="right-info-top">
+            <strong>Stokes, Hermann and Hackett and Sons</strong>
           </div>
-          <div>
-            <span>Ip Address: </span>
-            Tbilisi
-          </div>
-          <div>
-            <span>Ip Address: </span>
-            234235325
-          </div>
-          <div>
-            <span>Job Area: </span>
-            Front-end
-          </div>
-          <div>
-            <span>Job Type: </span>
-            front
-          </div>
-        </fieldset>
-
-        <fieldset className={classes.addressInfo}>
-          <legend>Address</legend>
-          <div>
-            <strong>hello</strong>
-            <div>
-              <span>City: </span> tbilisi
-            </div>
-            <div>
-              <span>Country: </span> georgia
-            </div>
-            <div>
-              <span>State: </span> georgia
-            </div>
-            <div>
-              <span>Street Address: </span>
-              tbilisi
-            </div>
-            <div>
-              <span>ZIP: </span>0103
-            </div>
-          </div>
-        </fieldset>
+          <p>
+            <u>City</u>: hi
+          </p>
+          <p>
+            <u>Country</u>: hi
+          </p>
+          <p>
+            <u>State</u>: hi
+          </p>
+          <p>
+            <u>Street Address</u>: hi
+          </p>
+          <p>
+            <u>ZIP</u>: ih
+          </p>
+        </div>
       </div>
+      <div className="breadcrumbs">
+        <a href="#">Prev</a>
+        >
+        <a href="#">Prev</a>
+      </div>
+      <h2 className="friends">Friends:</h2>
     </div>
   );
 };
