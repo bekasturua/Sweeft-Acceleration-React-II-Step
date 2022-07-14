@@ -1,15 +1,35 @@
 import img from "../User/img.jpg";
 import "./User.css";
+import Friends from "../../Friends/Friends";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const User = (props) => {
-  return (
+  const [user, setUser] = useState();
+  const params = useParams();
+
+  useEffect(() => {
+    axios
+      .get(
+        `http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${params.userId}`
+      )
+      .then((res) => {
+        setUser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return user ? (
     <div className="profile">
       <div className="header">
         <img src={img} alt="" />
         <div className="left-info">
           <span>Info</span>
           <div className="left-info-top">
-            <strong>hi</strong>
+            <strong>{`${user.prefix} ${user.name} ${user.lastName}`}</strong>
             <i>hi</i>
           </div>
           <div className="left-top-bottom">
@@ -53,13 +73,12 @@ const User = (props) => {
         </div>
       </div>
       <div className="breadcrumbs">
-        <a href="#">Prev</a>
-        >
-        <a href="#">Prev</a>
+        <a href="#">Prev</a>><a href="#">Prev</a>
       </div>
       <h2 className="friends">Friends:</h2>
+      <Friends userId={params.userId} />
     </div>
-  );
+  ) : null;
 };
 
 export default User;

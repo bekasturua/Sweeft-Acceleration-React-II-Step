@@ -40,7 +40,7 @@ const Users = (props) => {
               <div className={classes.card}>
                 <Link to={`/User/${user.id}`}>
                   <img
-                    src={user.imageUrl + `?v=${user.id}`}
+                    src={user.imageUrl + `?v=${user.id}`} 
                     className={classes.img}
                     alt="..."
                   />
