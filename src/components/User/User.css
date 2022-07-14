@@ -26,8 +26,6 @@
   margin-inline-end: 2px;
   padding-block-start: 0.35em;
   padding-inline-start: 0.75em;
-  padding-inline-end: 0.75em;
-  padding-block-end: 0.625em;
   min-inline-size: min-content;
   border-width: 2px;
   border-style: groove;
@@ -74,11 +72,11 @@
 }
 
 @media only screen and (max-width: 990px) {
-  .main-header {
+  .header {
     flex-direction: column;
   }
 
-  .main-header img {
+  .header img {
     height: 200px;
     width: 100%;
   }
@@ -91,4 +89,12 @@
   .right-info {
     width: 97%;
   }
+}
+
+.friends {
+  margin-left: 10px;
+}
+
+.breadcrumbs {
+  padding: 20px;
 }

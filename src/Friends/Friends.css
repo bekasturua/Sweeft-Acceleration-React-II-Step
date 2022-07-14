@@ -6,7 +6,7 @@
 
 .img {
     display: flex;
-    width: 100%;
+    width: 100px;
     height: 150px;
 }
 
@@ -16,4 +16,3 @@
     justify-content: space-around;
     border: 1px solid black;
 }
-
