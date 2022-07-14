@@ -1,4 +1,3 @@
-import img from "../User/img.jpg";
 import "./User.css";
 import Friends from "../../Friends/Friends";
 import { useParams } from "react-router-dom";

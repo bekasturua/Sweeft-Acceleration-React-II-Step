@@ -1,10 +1,9 @@
-import classes from "./Friends.css";
+import "./Friends.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useSearchParams } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Friends = (props) => {
-  
   const [page, setPage] = useState(1);
   const [friends, setFriends] = useState([]);
 
@@ -32,21 +31,21 @@ const Friends = (props) => {
   };
   return (
     <div>
-      <div className="row row-cols-1 row-cols-md-4 g-4">
-        {friends.map((user) => {
+      <div className="row">
+        {friends.map((friend) => {
           return (
-            <div className={classes.col} key={user.id}>
-              <div className={classes.card}>
-                <Link to={`/User/${user.id}`}>
+            <div className="col" key={friend.id}>
+              <div className="card">
+                <Link to={`/User/${friend.id}`}>
                   <img
-                    src={user.imageUrl + `?v=${user.id}`}
-                    className={classes.img}
+                    src={friend.imageUrl + `?v=${friend.id}`}
+                    className="img"
                     alt="..."
                   />
 
                   <div className="card-body">
-                    <h5 className="card-title">{`${user.prefix} ${user.name} ${user.lastName}`}</h5>
-                    <p className="card-text">{user.title}</p>
+                    <h5 className="card-text">{`${friend.prefix} ${friend.name} ${friend.lastName}`}</h5>
+                    <p className="card-text">{friend.title}</p>
                   </div>
                 </Link>
               </div>
