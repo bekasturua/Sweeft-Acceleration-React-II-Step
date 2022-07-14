@@ -25,50 +25,50 @@ const User = (props) => {
   return user ? (
     <div className="profile">
       <div className="header">
-        <img src={img} alt="" />
+        <img src={user.imageUrl + `?v=${user.id}`} alt="" />
         <div className="left-info">
           <span>Info</span>
           <div className="left-info-top">
             <strong>{`${user.prefix} ${user.name} ${user.lastName}`}</strong>
-            <i>hi</i>
+            <i>{user.title}</i>
           </div>
           <div className="left-top-bottom">
             <p>
-              <u>Email</u>hi
+              <u>Email</u>: {user.email}
             </p>
             <p>
-              <u>Ip Address</u>:hi
+              <u>Ip Address</u>: {user.ip}
             </p>
             <p>
-              <u>Ip Address</u>:hi
+              <u>Ip Address</u>: {user.ip}
             </p>
             <p>
-              <u>Job Area</u>: hi
+              <u>Job Area</u>: {user.jobArea}
             </p>
             <p>
-              <u>Job Type</u>: hi
+              <u>Job Type</u>: {user.jobType}
             </p>
           </div>
         </div>
         <div className="right-info">
-          <span>Adress</span>
+          <span>Address</span>
           <div className="right-info-top">
             <strong>Stokes, Hermann and Hackett and Sons</strong>
           </div>
           <p>
-            <u>City</u>: hi
+            <u>City</u>: {user.address.city}
           </p>
           <p>
-            <u>Country</u>: hi
+            <u>Country</u>: {user.address.country}
           </p>
           <p>
-            <u>State</u>: hi
+            <u>State</u>: {user.address.state}
           </p>
           <p>
-            <u>Street Address</u>: hi
+            <u>Street Address</u>: {user.address.streetAddress}
           </p>
           <p>
-            <u>ZIP</u>: ih
+            <u>ZIP</u>: {user.address.zipCode}
           </p>
         </div>
       </div>
