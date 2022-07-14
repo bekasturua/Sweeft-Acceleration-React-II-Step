@@ -1,6 +1,6 @@
 .col {
     width: calc(100% / 4.23);
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
 }
 
