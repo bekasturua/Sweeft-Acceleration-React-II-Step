@@ -21,23 +21,18 @@ const Users = (props) => {
       });
   }, [page]);
 
-  const handleScroll = (e) => {
+  window.onscroll = async () => {
     const bottom =
-      e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+      document.documentElement.scrollHeight -
+        document.documentElement.scrollTop <
+      document.documentElement.clientHeight;
     if (bottom) {
       setPage(page + 1);
     }
   };
 
   return (
-    <div
-      style={{
-        height: "700px",
-        overflow: "scroll",
-        overflowX: "hidden",
-      }}
-      onScroll={handleScroll}
-    >
+    <div>
       <div className="row row-cols-1 row-cols-md-4 g-4">
         {users.map((user) => {
           return (
