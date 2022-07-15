@@ -41,6 +41,12 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .col {
+        width: calc(100% / 1);
+    }
+}
+
 .cardBody {
     flex: 1 1 auto !important;
 }

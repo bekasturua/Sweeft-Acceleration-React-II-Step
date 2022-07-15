@@ -8,6 +8,8 @@ const User = (props) => {
   const [user, setUser] = useState();
   const params = useParams();
 
+
+
   useEffect(() => {
     axios
       .get(
@@ -19,7 +21,7 @@ const User = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [params.userId]);
 
   return user ? (
     <div className="profile">
