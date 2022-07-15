@@ -27,6 +27,17 @@
 
 @media only screen and (max-width: 990px) {
     .col {
-      width: 50%;
+        width: 100%;
     }
-  }
+}
+@media only screen and (max-width: 1280px) {
+    .col {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .col {
+        width: 75%;
+    }
+}
