@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const Users = (props) => {
   const [page, setPage] = useState(1);
   const [users, setUsers] = useState([]);
+  
 
   useEffect(() => {
     axios

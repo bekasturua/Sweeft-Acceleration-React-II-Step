@@ -1,14 +1,13 @@
 import "./User.css";
 import Friends from "../../Friends/Friends";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, NavLink, useParams } from "react-router-dom";
+import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 
 const User = (props) => {
   const [user, setUser] = useState();
   const params = useParams();
-
-
+  const [usersWay, setUsersWay] = useState([]);
 
   useEffect(() => {
     axios
@@ -17,6 +16,7 @@ const User = (props) => {
       )
       .then((res) => {
         setUser(res.data);
+        setUsersWay([...usersWay, res.data]);
       })
       .catch((err) => {
         console.log(err);
@@ -54,7 +54,7 @@ const User = (props) => {
         <div className="right-info">
           <span>Address</span>
           <div className="right-info-top">
-            <strong>Stokes, Hermann and Hackett and Sons</strong>
+            <strong>{`${user.company.name} ${user.company.suffix}`}</strong>
           </div>
           <p>
             <u>City</u>: {user.address.city}
@@ -74,7 +74,14 @@ const User = (props) => {
         </div>
       </div>
       <div className="breadcrumbs">
-        <a href="#">Prev</a>><a href="#">Prev</a>
+        {usersWay.map((userWay, index) => (
+          <Fragment key={userWay.id}>
+            <NavLink
+              to={`/User/${userWay.id}`}
+            >{`${userWay.prefix} ${userWay.name} ${userWay.lastName}`}</NavLink>
+            {index !== usersWay.length - 1 ? <span>{" > "}</span> : null}
+          </Fragment>
+        ))}
       </div>
       <h2 className="friends">Friends:</h2>
       <Friends userId={params.userId} />
