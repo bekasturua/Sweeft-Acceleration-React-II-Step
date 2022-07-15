@@ -1,8 +1,9 @@
 import "./User.css";
 import Friends from "../../Friends/Friends";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
+import {v4 as uuid} from 'uuid'
 
 const User = (props) => {
   const [user, setUser] = useState();
@@ -75,7 +76,7 @@ const User = (props) => {
       </div>
       <div className="breadcrumbs">
         {usersWay.map((userWay, index) => (
-          <Fragment key={userWay.id}>
+          <Fragment key={uuid()}>
             <NavLink
               to={`/User/${userWay.id}`}
             >{`${userWay.prefix} ${userWay.name} ${userWay.lastName}`}</NavLink>
