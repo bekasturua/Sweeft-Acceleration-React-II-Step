@@ -40,13 +40,15 @@ const Users = (props) => {
               <div className={classes.card}>
                 <Link to={`/User/${user.id}`}>
                   <img
-                    src={user.imageUrl + `?v=${user.id}`} 
+                    src={user.imageUrl + `?v=${user.id}`}
                     className={classes.img}
                     alt="..."
                   />
 
-                  <div className="card-body">
-                    <h5 className="card-title">{`${user.prefix} ${user.name} ${user.lastName}`}</h5>
+                  <div className={classes.cardBody}>
+                    <h5
+                      className={classes.cardTitle}
+                    >{`${user.prefix} ${user.name} ${user.lastName}`}</h5>
                     <p className="card-text">{user.title}</p>
                   </div>
                 </Link>

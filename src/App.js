@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Users />} />
         <Route path="/user/:userId" element={<User />} />
+        <Route path="/user/:friendId" element={<Friends />} />
       </Routes>
     </BrowserRouter>
   );

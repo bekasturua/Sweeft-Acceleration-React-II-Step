@@ -10,13 +10,14 @@
 }
 
 .img {
-    width: 245px;
+    width: 185px;
 }
 
 .card {
     margin: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
+    height: 300px;
 }
 
 .card-text {
